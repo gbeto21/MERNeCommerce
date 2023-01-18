@@ -3,9 +3,9 @@ import mongoose from "mongoose"
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI)
-    console.log(`✅ MongoDB connected: ${conn.connection.host}`)
+    console.log(`✅ MongoDB connected: ${conn.connection.host}`.cyan.underline)
   } catch (error) {
-    console.error("Error connecting to the DB.", error)
+    console.error(`Error connecting to the DB. ${error}`.red.underline.bold)
     process.exit(1)
   }
 }
