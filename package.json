@@ -1,0 +1,23 @@
+{
+  "name": "mernecommerce",
+  "version": "1.0.0",
+  "description": "MERN shoping card",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbeto21/MERNeCommerce.git"
+  },
+  "author": "Alberto González",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbeto21/MERNeCommerce/issues"
+  },
+  "homepage": "https://github.com/gbeto21/MERNeCommerce#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
