@@ -24,4 +24,22 @@ const authUser = asyncHandler(async (req, res) => {
   }
 })
 
-export { authUser }
+// @desc    Auth user & get token
+// @route   POST /users/login
+// @access  Public
+const getUserProfile = asyncHandler(async (req, res) => {
+  const userId = req.user._id
+  const user = await User.findById(req.user._id)
+  if (user) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    })
+  } else {
+    res.status(404)
+    throw new Error("User not found")
+  }
+})
+export { authUser, getUserProfile }
