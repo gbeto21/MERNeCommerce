@@ -13,6 +13,7 @@ import ProtectedRoute from "./utils/ProtectedRoute"
 import CartScreen from "./screens/CartScreen"
 import PaymentScreen from "./screens/PaymentScreen"
 import PlaceOrderScreen from "./screens/PlaceOrderScreen"
+import OrderScreen from "./screens/OrderScreen"
 
 const App = () => {
   return (
@@ -21,6 +22,14 @@ const App = () => {
       <main className="py-3">
         <Container>
           <Routes>
+            <Route
+              path="/order/:id"
+              element={
+                <ProtectedRoute>
+                  <OrderScreen />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/shipping"
               element={
