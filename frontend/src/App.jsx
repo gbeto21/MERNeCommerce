@@ -12,6 +12,7 @@ import Shipping from "./screens/ShippingScreen"
 import ProtectedRoute from "./utils/ProtectedRoute"
 import CartScreen from "./screens/CartScreen"
 import PaymentScreen from "./screens/PaymentScreen"
+import PlaceOrderScreen from "./screens/PlaceOrderScreen"
 
 const App = () => {
   return (
@@ -33,6 +34,14 @@ const App = () => {
               element={
                 <ProtectedRoute>
                   <PaymentScreen />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/placeorder"
+              element={
+                <ProtectedRoute>
+                  <PlaceOrderScreen />
                 </ProtectedRoute>
               }
             />
