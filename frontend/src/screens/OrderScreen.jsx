@@ -25,8 +25,10 @@ const OrderScreen = () => {
   }
 
   useEffect(() => {
-    dispatch(getOrderDetails(id))
-  }, [])
+    if (!order || order._id !== orderId) {
+      dispatch(getOrderDetails(id))
+    }
+  }, [order, orderId])
 
   return loading ? (
     <Loader />
