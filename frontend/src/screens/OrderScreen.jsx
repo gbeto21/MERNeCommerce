@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import { useNavigate, useParams } from "react-router-dom"
-import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap"
+import { useParams } from "react-router-dom"
+import { Row, Col, ListGroup, Image } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
@@ -10,8 +10,6 @@ import { getOrderDetails } from "../actions/orderActions"
 const OrderScreen = () => {
   const { id } = useParams()
   const dispatch = useDispatch()
-  const cart = useSelector((state) => state.cart)
-  const navigator = useNavigate()
 
   const orderDetails = useSelector((state) => state.orderDetails)
   const { order, loading, error } = orderDetails
