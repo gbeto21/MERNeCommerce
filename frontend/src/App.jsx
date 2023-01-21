@@ -8,6 +8,8 @@ import ProductScreen from "./screens/ProductScreen"
 import LoginScreen from "./screens/LoginScreen"
 import RegisterScreen from "./screens/RegisterScreen"
 import ProfileScreen from "./screens/ProfileScreen"
+import Shipping from "./screens/ShippingScreen"
+import ProtectedRoute from "./utils/ProtectedRoute"
 import CartScreen from "./screens/CartScreen"
 
 const App = () => {
@@ -17,6 +19,14 @@ const App = () => {
       <main className="py-3">
         <Container>
           <Routes>
+            <Route
+              path="/shipping"
+              element={
+                <ProtectedRoute>
+                  <Shipping />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/login" element={<LoginScreen />} />
             <Route path="/register" element={<RegisterScreen />} />
             <Route path="/profile" element={<ProfileScreen />} />
